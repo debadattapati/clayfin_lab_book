@@ -1,0 +1,61 @@
+package myproject;
+
+public class ElectronicsTvDvdRadio {
+
+	public static void main(String[] args) {
+		Electronics el=new Electronics();
+		el.Power();
+		el.Audio();
+		Tv tv=new Tv();
+		tv.Audio();
+		tv.video();
+		Dvd dv=new Dvd();
+		dv.Audio();
+		dv.Power();
+		dv.screenShare();
+		Radio rd=new Radio();
+		rd.Audio();
+		rd.Power();
+		rd.wirelessChannel();
+	}
+
+}
+class Electronics
+{
+	public void Audio() {
+		System.out.println("every items have sound");
+	}
+	public void Power()
+	{
+		System.out.println("every item needs power");
+	}
+	
+	}
+class Tv extends Electronics
+{
+	public void video()
+			 {
+		System.out.println("tv has inbuilt video");
+			 }
+	public void wiredChannel()
+	{
+		System.out.println("tv need wire connection");	
+	}
+	
+	}
+class Dvd extends Electronics
+{
+	public void screenShare()
+	{
+		System.out.println("Dvd can share the video to any screen");
+	}
+	
+	}
+	
+class Radio extends Electronics
+{
+	public void wirelessChannel()
+	{
+		System.out.println("Radio runs with wireless connection of fm");	
+	}
+	}
