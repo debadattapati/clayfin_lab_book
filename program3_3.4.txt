@@ -1,0 +1,40 @@
+import java.util.*;
+import java.util.Date;
+import java.time.Month;
+import java.time.LocalDate;
+import java.time.Period;
+
+class DayMonthYear {
+	public static void
+	getDayMonthYear(String date1, String date2)
+	{
+
+		LocalDate Date1
+			= LocalDate.parse(date1);
+			LocalDate Date2
+			= LocalDate.parse(date2);
+	    Period p = Period.between(Date1, Date2);
+	    
+	  
+
+		int day = p.getDays();
+
+		int month =p.getMonths() ;
+
+		int year =p.getYears() ;
+		
+		System.out.println("Day: " + day);
+		System.out.println("Month: " + month);
+		System.out.println("Year: " + year);
+	}
+	
+	public static void main(String args[])
+	{
+		Scanner scn=new Scanner(System.in);
+		System.out.println("enter the date1:");
+		String date1 = scn.nextLine();
+		System.out.println("enter the date2:");
+		String date2 = scn.nextLine();
+		getDayMonthYear(date1,date2);
+	}
+}
