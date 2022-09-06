@@ -1,0 +1,44 @@
+package myproject;
+
+class Person{
+    String firstName;
+    String lastName;
+    char gender;
+    int age;
+    int weight;
+    private long phone;
+    Person(){
+    	System.out.println("Default constructer called");  
+    }
+    Person( String firstName,String lastName,char gender, int age, int weight){
+     this.firstName=firstName;
+     this.lastName=lastName;
+     this.gender=gender;
+     this.age=age;
+     this.weight=weight;
+     System.out.println("Person Details");
+    System.out.println("-----------------");
+    System.out.println("First Name: "+firstName);
+    System.out.println("Last Name: "+lastName);
+    System.out.println("Gender: "+gender);
+    System.out.println("Age: "+age);
+    System.out.println("Weight: "+weight);
+    
+    
+    }
+    public void setPhoneNum(long phone){
+        this.phone=phone;
+    }
+    public long getPhoneNum(){
+        return phone;
+    }
+   }
+public class PersonMain{
+    public static void main(String args[]){
+        Person person=new Person("Debadatta","Pati",'M',22,75);
+        Person person1=new Person();
+        
+        person1.setPhoneNum(9348122725l);
+        System.out.println("Number:"+person1.getPhoneNum());
+         }
+}
