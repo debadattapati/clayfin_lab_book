@@ -1,0 +1,40 @@
+//package com.javabrahman.java8.time;
+import java.util.*;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
+public class InstantTimeZoneHandling {
+  public static void main(String args[]) {
+    //Starting with an java.time.Instant value
+    // Instant timeStamp= Instant.now();
+    // System.out.println("Machine Time Now:" + timeStamp);
+    System.out.println("###enter the zone in this format:");
+    Scanner scn=new Scanner(System.in);
+     System.err.println(" 1.America/Los_Angeles \n 2.Europe/London \n 3.Asia/Tokyo \n 4.US/Pacific \n 5.Africa/Cairo \n 6.Australia/Sydney ");
+    String zoneId=scn.nextLine();
+   
+   
+    m1(zoneId);
+ 
+  }
+  public static void m1(String zone)
+ {
+    //timeStamp in zone - "America/Los_Angeles"
+    // ZonedDateTime LAZone= timeStamp.atZone(ZoneId.of(zone));
+    // System.out.println("In "+zone+"Time Zone:"+ LAZone);
+    Instant timeStamp= Instant.now();
+     System.out.println("Machine Time Now:" + timeStamp);
+    
+    ZonedDateTime LAZone= timeStamp.atZone(ZoneId.of(zone));
+    System.out.println("In "+zone+"Time Zone:"+ LAZone);
+    
+    
+    // ZonedDateTime LAZone2= timeStamp.atZone(ZoneId.of("Asia/Tokyo"));
+    // System.out.println("In Los Asia/Tokyo Time Zone:"+ LAZone2);
+ 
+    //timeStamp in zone - "GMT+01:00"
+    // ZonedDateTime timestampAtGMTPlus1= timeStamp.atZone(ZoneId.of("GMT+01:00"));
+    // System.out.println("In 'GMT+01:00' Time Zone:"+ timestampAtGMTPlus1);
+ }
+}
